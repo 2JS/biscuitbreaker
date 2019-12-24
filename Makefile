@@ -1,12 +1,13 @@
 BUILDER=go build
 BUILDERFLAGS=
 BUILDDIR=build
-TARGET=biscuitbreaker
-OBJECTS=biscuitbreaker.go
+SRCDIR=src
+TARGET=$(BUILDDIR)/biscuitbreaker
+OBJECTS=$(SRCDIR)/biscuitbreaker.go
 
 all run:
 	go build -o $(BUILDDIR)/biscuitbreaker $(OBJECTS)
-	./build/biscuitbreaker
+	./$(BUILDDIR)/biscuitbreaker
 
 test:
 	go test
